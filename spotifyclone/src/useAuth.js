@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
 
   useEffect(() => {
-    axios.post('https://spotify-reeder.herokuapp.com/login', {
+    axios.post('http://localhost:3001/login', {
         code,
     })
     .then(res => {
@@ -29,7 +29,7 @@ export default function useAuth(code) {
     const interval = setInterval(() => {
       
 
-    axios.post('https://spotify-reeder.herokuapp.com/refresh', {
+    axios.post('http://localhost:3001/refresh', {
       refreshToken,
     }).then(res => {
       setAccessToken(res.data.accessToken)
